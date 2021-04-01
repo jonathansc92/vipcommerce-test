@@ -37,6 +37,8 @@
 - http://localhost:8080/api/pedidos-produtos (get/post)
 - http://localhost:8080/api/pedidos-produtos/{id} (put/delete/get)
 
+## Collections Postman
+- Na raiz do projeto nome Api.postman_collection.json
 ## Tests
 
 - vendor\bin\phpunit --filter lista_produtos
@@ -62,3 +64,7 @@
 - vendor\bin\phpunit --filter can_update_pedidos_produtos
 - vendor\bin\phpunit --filter can_delete_pedidos_produtos
 - vendor\bin\phpunit --filter can_show_pedidos_produtos
+
+## Requisitos 
+- PHP 7.2.x
+- MySQL 5.7.x

@@ -9,7 +9,6 @@ use \Prettus\Validator\Exceptions\ValidatorException;
 use Exception;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
-
 class PedidosService
 {
     private $respository;

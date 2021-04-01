@@ -4,10 +4,10 @@ namespace App\Http\Controllers\Api;
 use Illuminate\Http\Request;
 use App\Services\PedidosService;
 use App\Http\Controllers\Controller;
+use Barryvdh\DomPDF\Facade as PDF;
 
 class PedidosController extends Controller
 {
-
     private $service;
 
     public function __construct(PedidosService $service)
@@ -47,5 +47,20 @@ class PedidosController extends Controller
 
         return response()->json($delete);
     }
-}
 
+    public function sendmail($id)
+    {
+        $delete = $this->service->delete($id);
+
+        return response()->json($delete);
+    }
+
+    public function report($id)
+    {
+        $data =  $this->service->get($id);
+
+        $pdf = PDF::loadView('report', ['data' => $data]);
+
+        return $pdf->download('relatorio.pdf');
+    }
+}

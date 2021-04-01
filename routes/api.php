@@ -25,6 +25,8 @@ Route::namespace('API')->name('api.')->group(function () {
         Route::post('/', 'PedidosController@store');
         Route::put('/{id}', 'PedidosController@update');
         Route::delete('/{id}', 'PedidosController@delete');
+        Route::post('/{id}/sendmail', 'PedidosController@sendmail');
+        Route::post('/{id}/report', 'PedidosController@report');
     });
 
     Route::prefix('pedidos-produtos')->group(function () {
