@@ -40,12 +40,12 @@
 # Configuração Envio de email
 Substitua as variáveis de ambiente do arquivo .env, por suas credenciais
 
-MAIL_DRIVER = smtp
-MAIL_HOST = smtp.gmail.com
-MAIL_PORT = 587
-MAIL_USERNAME = your-gmail-username
-MAIL_PASSWORD = your-application-specific-password
-MAIL_ENCRYPTION = tls
+- MAIL_DRIVER = smtp
+- MAIL_HOST = smtp.gmail.com
+- MAIL_PORT = 587
+- MAIL_USERNAME = your-gmail-username
+- MAIL_PASSWORD = your-application-specific-password
+- MAIL_ENCRYPTION = tls
 
 http://localhost:8080/api/pedidos/{id}/sendmail (post)
 
@@ -53,31 +53,33 @@ http://localhost:8080/api/pedidos/{id}/sendmail (post)
 http://localhost:8080/api/pedidos/{id}/report (post)
 ## Collections Postman
 - Na raiz do projeto nome Api.postman_collection.json
-## Tests
+## Tests 
 
-- vendor\bin\phpunit --filter lista_produtos
-- vendor\bin\phpunit --filter can_create_produtos
-- vendor\bin\phpunit --filter can_update_produtos
-- vendor\bin\phpunit --filter can_delete_produtos
-- vendor\bin\phpunit --filter can_show_produtos
+Comandos no terminal
 
-- vendor\bin\phpunit --filter lista_clientes
-- vendor\bin\phpunit --filter can_create_clientes
-- vendor\bin\phpunit --filter can_update_clientes
-- vendor\bin\phpunit --filter can_delete_clientes
-- vendor\bin\phpunit --filter can_show_clientes
+- vendor/phpunit/phpunit/phpunit --filter lista_produtos
+- vendor/phpunit/phpunit/phpunit --filter can_create_produtos
+- vendor/phpunit/phpunit/phpunit --filter can_update_produtos
+- vendor/phpunit/phpunit/phpunit --filter can_delete_produtos
+- vendor/phpunit/phpunit/phpunit --filter can_show_produtos
 
-- vendor\bin\phpunit --filter lista_pedidos
-- vendor\bin\phpunit --filter can_create_pedidos
-- vendor\bin\phpunit --filter can_update_pedidos
-- vendor\bin\phpunit --filter can_delete_pedidos
-- vendor\bin\phpunit --filter can_show_pedidos
+- vendor/phpunit/phpunit/phpunit --filter lista_clientes
+- vendor/phpunit/phpunit/phpunit --filter can_create_clientes
+- vendor/phpunit/phpunit/phpunit --filter can_update_clientes
+- vendor/phpunit/phpunit/phpunit --filter can_delete_clientes
+- vendor/phpunit/phpunit/phpunit --filter can_show_clientes
 
-- vendor\bin\phpunit --filter lista_pedidos_produtos
-- vendor\bin\phpunit --filter can_create_pedidos_produtos
-- vendor\bin\phpunit --filter can_update_pedidos_produtos
-- vendor\bin\phpunit --filter can_delete_pedidos_produtos
-- vendor\bin\phpunit --filter can_show_pedidos_produtos
+- vendor/phpunit/phpunit/phpunit --filter lista_pedidos
+- vendor/phpunit/phpunit/phpunit --filter can_create_pedidos
+- vendor/phpunit/phpunit/phpunit --filter can_update_pedidos
+- vendor/phpunit/phpunit/phpunit --filter can_delete_pedidos
+- vendor/phpunit/phpunit/phpunit --filter can_show_pedidos
+
+- vendor/phpunit/phpunit/phpunit --filter lista_pedidos_produtos
+- vendor/phpunit/phpunit/phpunit --filter can_create_pedidos_produtos
+- vendor/phpunit/phpunit/phpunit --filter can_update_pedidos_produtos
+- vendor/phpunit/phpunit/phpunit --filter can_delete_pedidos_produtos
+- vendor/phpunit/phpunit/phpunit --filter can_show_pedidos_produtos
 
 ## Requisitos 
 - PHP 7.2.x

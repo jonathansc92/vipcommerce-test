@@ -12,7 +12,7 @@ class ClientesTest extends TestCase
     /** @test */
     public function lista_clientes()
     {
-        $response = $this->get('/api/clientes/');
+        $response = $this->get('api/clientes');
 
         $response->assertStatus(200);
     }

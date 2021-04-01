@@ -19,8 +19,8 @@ use Illuminate\Support\Str;
 
 $factory->define(PedidosProdutos::class, function (Faker $faker) {
     return [
-        'codigo_pedido' => $faker->biasedNumberBetween($min = 0, $max = 10, $function = 'sqrt'),
-        'codigo_produto' => $faker->biasedNumberBetween($min = 0, $max = 10, $function = 'sqrt'),
+        'pedidos_id' => $faker->biasedNumberBetween($min = 0, $max = 10, $function = 'sqrt'),
+        'produtos_id' => $faker->biasedNumberBetween($min = 0, $max = 10, $function = 'sqrt'),
         'quantidade' => $faker->biasedNumberBetween($min = 0, $max = 10, $function = 'sqrt')
     ];
 });

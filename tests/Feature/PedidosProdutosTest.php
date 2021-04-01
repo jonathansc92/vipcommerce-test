@@ -23,8 +23,8 @@ class PedidosProdutosTest extends TestCase
         $pedidosProdutos = factory(PedidosProdutos::class)->create();
  
         $data = [
-            'codigo_pedido' => $this->faker->biasedNumberBetween($min = 0, $max = 10, $function = 'sqrt'),
-            'codigo_produto' => $this->faker->biasedNumberBetween($min = 0, $max = 10, $function = 'sqrt'),
+            'pedidos_id' => $this->faker->biasedNumberBetween($min = 0, $max = 10, $function = 'sqrt'),
+            'produtos_id' => $this->faker->biasedNumberBetween($min = 0, $max = 10, $function = 'sqrt'),
             'quantidade' => $this->faker->biasedNumberBetween($min = 0, $max = 10, $function = 'sqrt')
         ];
  
@@ -37,8 +37,8 @@ class PedidosProdutosTest extends TestCase
         $pedidosProdutos = factory(PedidosProdutos::class)->create();
  
         $data = [
-            'codigo_pedido' => $this->faker->biasedNumberBetween($min = 0, $max = 10, $function = 'sqrt'),
-            'codigo_produto' => $this->faker->biasedNumberBetween($min = 0, $max = 10, $function = 'sqrt'),
+            'pedidos_id' => $this->faker->biasedNumberBetween($min = 0, $max = 10, $function = 'sqrt'),
+            'produtos_id' => $this->faker->biasedNumberBetween($min = 0, $max = 10, $function = 'sqrt'),
             'quantidade' => $this->faker->biasedNumberBetween($min = 0, $max = 10, $function = 'sqrt')
         ];
  
@@ -51,8 +51,8 @@ class PedidosProdutosTest extends TestCase
         $pedidosProdutos = factory(PedidosProdutos::class)->create();
  
         $data = [
-            'codigo_pedido' => $this->faker->biasedNumberBetween($min = 0, $max = 10, $function = 'sqrt'),
-            'codigo_produto' => $this->faker->biasedNumberBetween($min = 0, $max = 10, $function = 'sqrt'),
+            'pedidos_id' => $this->faker->biasedNumberBetween($min = 0, $max = 10, $function = 'sqrt'),
+            'produtos_id' => $this->faker->biasedNumberBetween($min = 0, $max = 10, $function = 'sqrt'),
             'quantidade' => $this->faker->biasedNumberBetween($min = 0, $max = 10, $function = 'sqrt')
         ];
  
@@ -65,8 +65,8 @@ class PedidosProdutosTest extends TestCase
         $pedidosProdutos = factory(PedidosProdutos::class)->create();
  
         $data = [
-            'codigo_pedido' => $this->faker->biasedNumberBetween($min = 0, $max = 10, $function = 'sqrt'),
-            'codigo_produto' => $this->faker->biasedNumberBetween($min = 0, $max = 10, $function = 'sqrt'),
+            'pedidos_id' => $this->faker->biasedNumberBetween($min = 0, $max = 10, $function = 'sqrt'),
+            'produtos_id' => $this->faker->biasedNumberBetween($min = 0, $max = 10, $function = 'sqrt'),
             'quantidade' => $this->faker->biasedNumberBetween($min = 0, $max = 10, $function = 'sqrt')
         ];
  

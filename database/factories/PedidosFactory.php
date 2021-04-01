@@ -21,6 +21,6 @@ $factory->define(Pedidos::class, function (Faker $faker) {
     return [
         'data_pedido' => $faker->date($format = 'Y-m-d', $max = 'now'),
         'observacao' => $faker->shuffleString($string = 'Apenas um teste de observacao do pedido', $encoding = 'UTF-8'),
-        'codigo_cliente' => $faker->biasedNumberBetween($min = 0, $max = 10, $function = 'sqrt')
+        'clientes_id' => $faker->biasedNumberBetween($min = 0, $max = 10, $function = 'sqrt')
     ];
 });

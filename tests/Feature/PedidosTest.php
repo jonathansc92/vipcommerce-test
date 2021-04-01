@@ -25,7 +25,7 @@ class PedidosTest extends TestCase
         $data = [
             'data_pedido' => $this->faker->date($format = 'Y-m-d', $max = 'now'),
             'observacao' => $this->faker->shuffleString($string = 'Apenas um teste de observacao do pedido', $encoding = 'UTF-8'),
-            'codigo_cliente' => $this->faker->biasedNumberBetween($min = 0, $max = 10, $function = 'sqrt')
+            'clientes_id' => $this->faker->biasedNumberBetween($min = 0, $max = 10, $function = 'sqrt')
         ];
  
         $this->post('/api/pedidos/', $data)->assertStatus(200);
@@ -39,7 +39,7 @@ class PedidosTest extends TestCase
         $data = [
             'data_pedido' => $this->faker->date($format = 'Y-m-d', $max = 'now'),
             'observacao' => $this->faker->shuffleString($string = 'Apenas um teste de observacao do pedido', $encoding = 'UTF-8'),
-            'codigo_cliente' => $this->faker->biasedNumberBetween($min = 0, $max = 10, $function = 'sqrt')
+            'clientes_id' => $this->faker->biasedNumberBetween($min = 0, $max = 10, $function = 'sqrt')
         ];
  
         $this->put('/api/pedidos/' . $pedidos->id, $data)->assertStatus(200);
@@ -53,7 +53,7 @@ class PedidosTest extends TestCase
         $data = [
             'data_pedido' => $this->faker->date($format = 'Y-m-d', $max = 'now'),
             'observacao' => $this->faker->shuffleString($string = 'Apenas um teste de observacao do pedido', $encoding = 'UTF-8'),
-            'codigo_cliente' => $this->faker->biasedNumberBetween($min = 0, $max = 10, $function = 'sqrt')
+            'clientes_id' => $this->faker->biasedNumberBetween($min = 0, $max = 10, $function = 'sqrt')
         ];
  
         $this->delete('/api/pedidos/' . $pedidos->id, $data)->assertStatus(200);
@@ -67,7 +67,7 @@ class PedidosTest extends TestCase
         $data = [
             'data_pedido' => $this->faker->date($format = 'Y-m-d', $max = 'now'),
             'observacao' => $this->faker->shuffleString($string = 'Apenas um teste de observacao do pedido', $encoding = 'UTF-8'),
-            'codigo_cliente' => $this->faker->biasedNumberBetween($min = 0, $max = 10, $function = 'sqrt')
+            'clientes_id' => $this->faker->biasedNumberBetween($min = 0, $max = 10, $function = 'sqrt')
         ];
  
         $this->get('/api/pedidos/' . $pedidos->id, $data)->assertStatus(200);

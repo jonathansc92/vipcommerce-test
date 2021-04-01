@@ -12,7 +12,7 @@ class ProdutosTest extends TestCase
     /** @test */
     public function lista_produtos()
     {
-        $response = $this->get('/api/produtos/');
+        $response = $this->get('/api/produtos');
 
         $response->assertStatus(200);
     }
