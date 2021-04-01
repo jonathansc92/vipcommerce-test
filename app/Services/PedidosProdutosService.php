@@ -22,12 +22,27 @@ class PedidosProdutosService
 
     public function getAll()
     {
-        return $this->respository->with->all();
+        return $this->respository->all();
     }
 
     public function get($id)
     {
-        return $this->respository->with->find($id);
+        return $this->respository->find($id);
+    }
+    
+    public function deleteByOrder($id)
+    {
+        try {
+            $this->respository->where('pedidos_id', $id)->delete();
+
+            return ['data' => ['messages' => 'Removido com sucesso!', 200]];
+        } catch (Exception $e) {
+            switch (get_class($e)) {
+                case QueryException::class: return ['data' => ['messages' => $e->getMessage(), 1010]];
+                case Exception::class: return ['data' => ['messages' => $e->getMessage(), 1010]];
+                default: return ['data' => ['messages' => get_class($e), 1010]];
+            }
+        }
     }
 
     public function store(Request $request)

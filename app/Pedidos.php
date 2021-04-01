@@ -5,6 +5,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Pedidos extends Model
 {
+    const DINHEIRO = 1;
+    const CARTAO = 2;
+    const CHEQUE = 3;
+
     protected $table = 'pedidos';
     protected $fillable = [
         'id',
@@ -14,13 +18,13 @@ class Pedidos extends Model
         'cliente_id'
     ];
 
-    public function pedidos_produtos()
+    public function produtos()
     {
-        return $this->hasMany(PedidosProdutos::class, 'id', 'pedido_id');
+        return $this->hasMany(PedidosProdutos::class, 'pedidos_id', 'id');
     }
 
-    public function clientes()
+    public function cliente()
     {
-        return $this->belongsTo(Clientes::class, 'id', 'cliente_id');
+        return $this->belongsTo(Clientes::class, 'cliente_id', 'id');
     }
 }

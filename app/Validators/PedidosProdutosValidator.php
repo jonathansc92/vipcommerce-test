@@ -8,13 +8,13 @@ class PedidosProdutosValidator extends LaravelValidator
 {
     protected $rules = [
         ValidatorInterface::RULE_CREATE => [
-            'codigo_pedido' => 'required',
-            'codigo_produto'=> 'required',
+            'pedidos_id' => 'required',
+            'produtos_id'=> 'required',
             'quantidade'=> 'required'
         ],
         ValidatorInterface::RULE_UPDATE => [
-            'codigo_pedido' => 'required',
-            'codigo_produto'=> 'required',
+            'pedidos_id' => 'required',
+            'produtos_id'=> 'required',
             'quantidade'=> 'required'
         ]
     ];

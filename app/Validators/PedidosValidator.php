@@ -10,12 +10,12 @@ class PedidosValidator extends LaravelValidator
         ValidatorInterface::RULE_CREATE => [
             'data_pedido' => 'required',
             'forma_pagamento'=> 'required',
-            'codigo_cliente'=> 'required'
+            'cliente_id'=> 'required'
         ],
         ValidatorInterface::RULE_UPDATE => [
             'data_pedido' => 'required',
             'forma_pagamento'=> 'required',
-            'codigo_cliente'=> 'required'
+            'cliente_id'=> 'required'
         ]
     ];
 }

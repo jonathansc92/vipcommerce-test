@@ -2,6 +2,7 @@
 namespace App\Services;
 
 use App\Repositories\PedidosRepository;
+use App\Services\PedidosProdutosService;
 use App\Validators\PedidosValidator;
 use \Prettus\Validator\Contracts\ValidatorInterface;
 use \Prettus\Validator\Exceptions\ValidatorException;
@@ -13,21 +14,35 @@ class PedidosService
 {
     private $respository;
     private $validator;
+    private $pedidosProdutosService;
 
-    public function __construct(PedidosRepository $respository, PedidosValidator $validator)
+    public function __construct(PedidosRepository $respository, PedidosValidator $validator, PedidosProdutosService $pedidosProdutosService)
     {
         $this->respository = $respository;
         $this->validator = $validator;
+        $this->pedidosProdutosService = $pedidosProdutosService;
     }
 
     public function getAll()
     {
-        return $this->respository->with('pedidos_produtos')->all();
+        return $this->respository->with(
+            [
+                'cliente',
+                'produtos',
+                'produtos.produto'
+            ]
+        )->all();
     }
 
     public function get($id)
     {
-        return $this->respository->with('pedidos_produtos')->find($id);
+        return $this->respository->with(
+            [
+                'cliente',
+                'produtos',
+                'produtos.produto'
+            ]
+        )->find($id);
     }
 
     public function store(Request $request)
@@ -75,6 +90,8 @@ class PedidosService
     public function delete($id)
     {
         try {
+            $this->pedidosProdutosService->deleteByOrder($id);
+            
             $this->respository->delete($id);
 
             return ['data' => ['messages' => 'Removido com sucesso!', 200]];
