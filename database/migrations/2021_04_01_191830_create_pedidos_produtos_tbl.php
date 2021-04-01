@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateClientesTbl extends Migration
+class CreatePedidosProdutosTbl extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class CreateClientesTbl extends Migration
      */
     public function up()
     {
-        Schema::create('clientes', function (Blueprint $table) {
+        Schema::create('pedidos_produtos', function (Blueprint $table) {
             $table->id();
-            $table->string('nome');
-            $table->string('cpf', 11)->unique();
-            $table->string('sexo', 1);
-            $table->string('email', 100)->unique();
+            $table->integer('quantidade');
+            $table->integer('pedidos_id')->unsigned();
+            $table->integer('produtos_id')->unsigned();
             $table->timestamps();
         });
     }
@@ -30,6 +29,6 @@ class CreateClientesTbl extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('clientes');
+        Schema::dropIfExists('pedidos_produtos');
     }
 }
