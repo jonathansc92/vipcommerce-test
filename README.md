@@ -37,6 +37,20 @@
 - http://localhost:8080/api/pedidos-produtos (get/post)
 - http://localhost:8080/api/pedidos-produtos/{id} (put/delete/get)
 
+# Configuração Envio de email
+Substitua as variáveis de ambiente do arquivo .env, por suas credenciais
+
+MAIL_DRIVER = smtp
+MAIL_HOST = smtp.gmail.com
+MAIL_PORT = 587
+MAIL_USERNAME = your-gmail-username
+MAIL_PASSWORD = your-application-specific-password
+MAIL_ENCRYPTION = tls
+
+http://localhost:8080/api/pedidos/{id}/sendmail (post)
+
+## Endpoint Relatórios
+http://localhost:8080/api/pedidos/{id}/report (post)
 ## Collections Postman
 - Na raiz do projeto nome Api.postman_collection.json
 ## Tests

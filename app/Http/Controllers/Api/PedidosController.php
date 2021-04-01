@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use App\Services\PedidosService;
 use App\Http\Controllers\Controller;
 use Barryvdh\DomPDF\Facade as PDF;
+use Mail;
 
 class PedidosController extends Controller
 {
@@ -50,9 +51,13 @@ class PedidosController extends Controller
 
     public function sendmail($id)
     {
-        $delete = $this->service->delete($id);
+        $data =  $this->service->get($id);
 
-        return response()->json($delete);
+        Mail::send('mail', ['data' => $data], function ($m) use ($data) {
+            $m->from('api@test.com', 'API');
+
+            $m->to($data->cliente->email, $data->cliente->nome)->subject('Dados de pedido');
+        });
     }
 
     public function report($id)
