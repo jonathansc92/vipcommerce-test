@@ -55,6 +55,7 @@ class ClientesService
     public function update(Request $request, $id)
     {
         try {
+            $this->validator->setId($id);
             $this->validator->with($request->all())->passesOrFail(ValidatorInterface::RULE_UPDATE);
            
             $request['updated_at'] = \Carbon\Carbon::now();

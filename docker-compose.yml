@@ -6,7 +6,7 @@ services:
 
     mysql:
       image: mysql:5.7
-      container_name: vipcommerce-test-mysql
+      container_name: vipcommerce-mysql
       working_dir: /application
       volumes:
         - .:/application
@@ -16,11 +16,11 @@ services:
         - MYSQL_USER=vipcommerce
         - MYSQL_PASSWORD=vipcommerce
       ports:
-        - "8082:3306"
+        - "3306:3306"
 
     webserver:
       image: nginx:alpine
-      container_name: vipcommerce-test-webserver
+      container_name: vipcommerce-webserver
       working_dir: /application
       volumes:
           - .:/application
@@ -30,7 +30,7 @@ services:
 
     php-fpm:
       build: phpdocker/php-fpm
-      container_name: vipcommerce-test-php-fpm
+      container_name: vipcommerce-php-fpm
       working_dir: /application
       volumes:
         - .:/application

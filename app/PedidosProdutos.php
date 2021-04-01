@@ -7,19 +7,19 @@ class PedidosProdutos extends Model
 {
     protected $table = 'pedidos_produtos';
     protected $fillable = [
-        'codigo_pedido_produto',
-        'codigo_pedido',
-        'codigo_produto',
+        'id',
+        'pedido_id',
+        'produto_id',
         'quantidade',
     ];
 
     public function produtos()
     {
-        return $this->belongsTo(Produtos::class, 'codigo_produto', 'codigo_produto');
+        return $this->belongsTo(Produtos::class, 'produto_id', 'id');
     }
 
     public function pedidos()
     {
-        return $this->belongsTo(Pedidos::class, 'codigo_pedido', 'codigo_pedido');
+        return $this->belongsTo(Pedidos::class, 'pedido_id', 'id');
     }
 }

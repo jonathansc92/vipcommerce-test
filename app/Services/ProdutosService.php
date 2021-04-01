@@ -58,7 +58,6 @@ class ProdutosService
             $this->validator->with($request->all())->passesOrFail(ValidatorInterface::RULE_UPDATE);
            
             $request['updated_at'] = \Carbon\Carbon::now();
-           
             $this->respository->update($request->all(), $id);
 
             return ['data' => ['messages' => 'Atualizado com sucesso!', 201]];
