@@ -15,6 +15,18 @@
 - Executar o comando php artisan key:generate;
 - Executar no container do PHP o comando php artisan migrate.
 
+# Configuração Envio de email
+Substitua as variáveis de ambiente do arquivo .env, por suas credenciais
+
+- MAIL_DRIVER = smtp
+- MAIL_HOST = smtp.gmail.com
+- MAIL_PORT = 587
+- MAIL_USERNAME = your-gmail-username
+- MAIL_PASSWORD = your-application-specific-password
+- MAIL_ENCRYPTION = tls
+
+http://localhost:8080/api/pedidos/{id}/sendmail (post)
+
 ## Endpoints
 
 - http://localhost:8080/api/produtos (get/post)
@@ -37,18 +49,6 @@
 - http://localhost:8080/api/pedidos-produtos (get/post)
 - http://localhost:8080/api/pedidos-produtos/{id} (put/delete/get)
 
-# Configuração Envio de email
-Substitua as variáveis de ambiente do arquivo .env, por suas credenciais
-
-- MAIL_DRIVER = smtp
-- MAIL_HOST = smtp.gmail.com
-- MAIL_PORT = 587
-- MAIL_USERNAME = your-gmail-username
-- MAIL_PASSWORD = your-application-specific-password
-- MAIL_ENCRYPTION = tls
-
-http://localhost:8080/api/pedidos/{id}/sendmail (post)
-
 ## Endpoint Relatórios
 http://localhost:8080/api/pedidos/{id}/report (post)
 ## Collections Postman
@@ -57,6 +57,7 @@ http://localhost:8080/api/pedidos/{id}/report (post)
 
 Comandos no terminal
 
+- vendor/phpunit/phpunit/phpunit (Executa todos os testes)
 - vendor/phpunit/phpunit/phpunit --filter lista_produtos
 - vendor/phpunit/phpunit/phpunit --filter can_create_produtos
 - vendor/phpunit/phpunit/phpunit --filter can_update_produtos
